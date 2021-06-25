@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">KP01BB</string>
+
+    <string name="search">Character Search</string>
+
+    <string name="seasonalfilter">Filter by Season:</string>
+
+    <string name="characterfrag_name">Name:</string>
+    <string name="characterfrag_occupation">Occupation:</string>
+    <string name="characterfrag_status">Status:</string>
+    <string name="characterfrag_nickname">Nickname:</string>
+    <string name="characterfrag_seasonappearance">Season Appearance:</string>
+</resources>

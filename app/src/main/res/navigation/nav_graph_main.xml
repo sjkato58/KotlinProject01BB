@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.katofuji.kotlinproject01bb.fragments.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_characterActivity"
+            app:destination="@id/characterActivity"
+            app:enterAnim="@anim/in_from_right"
+            app:exitAnim="@anim/out_to_left"
+            app:popEnterAnim="@anim/in_from_left"
+            app:popExitAnim="@anim/out_to_right" />
+    </fragment>
+
+    <activity
+        android:id="@+id/characterActivity"
+        android:name="com.katofuji.kotlinproject01bb.activities.CharacterActivity"
+        android:label="CharacterActivity"
+        tools:layout="@layout/activity_character" >
+
+        <argument
+            android:name="fh_key_characterid"
+            app:argType="string"
+            android:defaultValue="" />
+    </activity>
+</navigation>

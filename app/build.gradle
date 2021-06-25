@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt' // put this next to plugin lines
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.katofuji.kotlinproject01bb"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinversion"
+
+    implementation "androidx.core:core-ktx:$xcorektx"
+    implementation "androidx.appcompat:appcompat:$xappcompat"
+    implementation "androidx.constraintlayout:constraintlayout:$xconstraintlayout"
+
+    implementation "com.google.android.material:material:$googlever.material"
+
+    implementation "androidx.navigation:navigation-fragment-ktx:$xnavigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$xnavigation"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$xnavigation"
+
+    implementation "com.android.volley:volley:$volleyver"
+
+    implementation "com.github.bumptech.glide:glide:$glidever"
+    // Skip this if you don't want to use integration libraries or configure Glide.
+    kapt  "com.github.bumptech.glide:compiler:$glidever"
+
+    testImplementation "junit:junit:4.+"
+    androidTestImplementation "androidx.test.ext:junit:1.1.2"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.3.0"
+}

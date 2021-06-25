@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="urls_corefeed"><![CDATA[https://breakingbadapi.com/api/characters]]></string>
+</resources>
