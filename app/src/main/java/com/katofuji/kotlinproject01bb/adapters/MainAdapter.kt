@@ -20,12 +20,12 @@ class MainAdapter(
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>()
 {
     var mSearchQuery : String? = ""
-    var mList : ArrayList<CharacterObject>? = null
+    var mList: ArrayList<Any> = arrayListOf<Any>()
     var mSeasonCheck = ""
     var mOnClickListener : View.OnClickListener? = null
     var mOnItemSelectedListener : AdapterView.OnItemSelectedListener? = null
 
-    private var mModList : ArrayList<Any> = arrayListOf()
+    private var mModList: ArrayList<Any> = arrayListOf()
 
     fun sortCharacterList()
     {
@@ -36,21 +36,21 @@ class MainAdapter(
                 mModList = arrayListOf()
                 val selector = SelectorObject()
                 mModList.add(selector)
-                val tempList = arrayListOf<CharacterObject>()
+                val tempList = arrayListOf<Any>()
                 if (!BBUtils.isTextEmpty(mSeasonCheck))
                 {
 
                 }
                 else
                 {
-                    tempList.addAll(mList!!);
+                    tempList.addAll(mList);
                 }
                 if (!BBUtils.isTextEmpty(mSearchQuery))
                 {
-                    mSearchQuery = mSearchQuery?.toLowerCase()
+                    mSearchQuery = mSearchQuery?.lowercase()
                     for (item in tempList)
                     {
-                        if (item.name?.toLowerCase()!!.contains(mSearchQuery!!))
+                        if (item is CharacterObject && item.name?.lowercase()!!.contains(mSearchQuery!!))
                         {
                             mModList.add(item)
                         }
@@ -58,7 +58,7 @@ class MainAdapter(
                 }
                 else
                 {
-                    mModList.addAll(mList!!);
+                    mModList.addAll(mList);
                 }
             }
         }
